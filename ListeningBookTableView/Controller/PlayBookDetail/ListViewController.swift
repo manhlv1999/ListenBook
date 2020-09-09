@@ -11,6 +11,15 @@ class ListViewController: UIViewController {
         tableview.translatesAutoresizingMaskIntoConstraints = false
         return tableview
     }()
+    var tableViews: UITableView = {
+        var tableview = UITableView()
+        tableview.rowHeight = UITableView.automaticDimension
+        tableview.estimatedRowHeight = 200
+        tableview.tableFooterView = UIView()
+        tableview.register(ListTableViewCell.self, forCellReuseIdentifier: "ListTableViewCell")
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        return tableview
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
